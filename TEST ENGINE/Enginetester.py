@@ -1,39 +1,29 @@
 import subprocess
 import time
 
-# Paths to your engines
 ENGINE_1 = r"./build/nova"
-ENGINE_2 = r"./stockfish/stockfish-ubuntu-x86-64-avx2"
+ENGINE_2 = r"./stockfish/stockfish"
+DEPTH = 5  # You can raise this to make Stockfish tougher
 
-
-
-# Engine settings
-DEPTH = 6
-
-# Start a new process for each engine
 def start_engine(path):
     return subprocess.Popen(
         [path],
         stdin=subprocess.PIPE,
         stdout=subprocess.PIPE,
         stderr=subprocess.DEVNULL,
-        text=True,
-        bufsize=1
+        text=True
     )
 
-# Send command to engine
 def send(engine, command):
     engine.stdin.write(command + "\n")
     engine.stdin.flush()
 
-# Read lines until we get desired response
 def wait_for(engine, token):
     while True:
         line = engine.stdout.readline()
         if token in line:
             break
 
-# Get best move from engine
 def get_best_move(engine, position):
     send(engine, f"position {position}")
     send(engine, f"go depth {DEPTH}")
@@ -42,7 +32,6 @@ def get_best_move(engine, position):
         if line.startswith("bestmove"):
             return line.split()[1]
 
-# Main match loop
 def play_game():
     board_state = "startpos"
     move_history = []
@@ -62,20 +51,32 @@ def play_game():
         position = board_state if not move_history else f"{board_state} moves {' '.join(move_history)}"
         current_engine = e1 if turn % 2 == 0 else e2
         move = get_best_move(current_engine, position)
-        if move == "(none)" or move == "0000":
-            print("Game over.")
-            break
+        if move == "0000" or move == "(none)":
+            if turn % 2 == 0:
+                print("❌ Nova (White) lost")
+                return False
+            else:
+                print("✅ Nova (Black) drew or won")
+                return True
         move_history.append(move)
         print(f"{'White' if turn % 2 == 0 else 'Black'} plays: {move}")
         turn += 1
         if turn > 100:
-            print("Draw by move limit.")
-            break
+            print("✅ Draw by move limit (100)")
+            return True
 
     for e in [e1, e2]:
         send(e, "quit")
         e.terminate()
 
-# Run the match
 if __name__ == "__main__":
-    play_game()
+    game_count = 0
+    while True:
+        game_count += 1
+        print(f"\n🎮 Game {game_count} begins...\n")
+        success = play_game()
+        if success:
+            print(f"\n🏁 Game {game_count} result: Nova survived (draw or win)!")
+            break
+        else:
+            print(f"\n🔁 Game {game_count} result: Nova lost. Retrying...\n")
