@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\JoshK\Desktop\NovaChessEngine-nhlfp1-codex-implement-core-engine-logic-updates\build\CMakeFiles\3fec49942c391e25faf67fe17554f8d0\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{82A703FA-0E3C-32F5-A0B9-6090FD7CC8D7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

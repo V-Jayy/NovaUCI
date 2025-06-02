@@ -1,0 +1,3 @@
+C:/Users/JoshK/Desktop/NovaChessEngine-nhlfp1-codex-implement-core-engine-logic-updates/build/CMakeFiles/nova.dir
+C:/Users/JoshK/Desktop/NovaChessEngine-nhlfp1-codex-implement-core-engine-logic-updates/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/JoshK/Desktop/NovaChessEngine-nhlfp1-codex-implement-core-engine-logic-updates/build/CMakeFiles/ZERO_CHECK.dir

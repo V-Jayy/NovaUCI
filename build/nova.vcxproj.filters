@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\JoshK\Desktop\NovaChessEngine-nhlfp1-codex-implement-core-engine-logic-updates\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\JoshK\Desktop\NovaChessEngine-nhlfp1-codex-implement-core-engine-logic-updates\src\uci.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\JoshK\Desktop\NovaChessEngine-nhlfp1-codex-implement-core-engine-logic-updates\src\board.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\JoshK\Desktop\NovaChessEngine-nhlfp1-codex-implement-core-engine-logic-updates\src\search.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\JoshK\Desktop\NovaChessEngine-nhlfp1-codex-implement-core-engine-logic-updates\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{CE7E4E9D-3184-3E02-A998-1FD03472EDCF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
