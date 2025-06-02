@@ -2,8 +2,8 @@ import subprocess
 import time
 
 # Paths to your engines
-ENGINE_1 = r"C:\Users\JoshK\Downloads\NovaChessEngine-q2\NovaChessEngine-q2\build\Release\nova.exe"
-ENGINE_2 = r"C:\Users\JoshK\Desktop\stockfish\stockfish-windows-x86-64-avx2.exe"
+ENGINE_1 = r"./build/nova"
+ENGINE_2 = r"./stockfish/stockfish-ubuntu-x86-64-avx2"
 
 
 
