@@ -1,8 +1,0 @@
-﻿  Building Custom Rule C:/Users/JoshK/Desktop/NovaChessEngine-nhlfp1-codex-implement-core-engine-logic-updates/CMakeLists.txt
-  main.cpp
-  uci.cpp
-  board.cpp
-  search.cpp
-C:\Users\JoshK\Desktop\NovaChessEngine-nhlfp1-codex-implement-core-engine-logic-updates\src\search.cpp(130,18): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Generating Code...
-  nova.vcxproj -> C:\Users\JoshK\Desktop\NovaChessEngine-nhlfp1-codex-implement-core-engine-logic-updates\build\Release\nova.exe
