@@ -1,7 +1,11 @@
 #include "search.h"
 #include <algorithm>
+#include <unordered_map>
+#include <string>
 
 namespace nova {
+
+std::unordered_map<std::string, TTEntry> TransTable;
 
 static const int pieceValues[13] = {
     0, 100, 320, 330, 500, 900, 20000,
@@ -167,6 +171,12 @@ void orderMoves(std::vector<Move>& moves, const Board& board) {
 int search(Board& board, int depth, int alpha, int beta) {
     if (depth == 0) return evaluate(board);
 
+    std::string key = board.getFEN();
+    auto it = TransTable.find(key);
+    if (it != TransTable.end() && it->second.depth >= depth) {
+        return it->second.score;
+    }
+
     std::vector<Move> moves = board.generateLegalMoves();
     orderMoves(moves, board);
     if (moves.empty()) {
@@ -186,6 +196,7 @@ int search(Board& board, int depth, int alpha, int beta) {
             if (value > alpha) alpha = value;
             if (alpha >= beta) break;
         }
+        TransTable[key] = {depth, value};
         return value;
     } else {
         int value = 1000000;
@@ -197,6 +208,7 @@ int search(Board& board, int depth, int alpha, int beta) {
             if (value < beta) beta = value;
             if (alpha >= beta) break;
         }
+        TransTable[key] = {depth, value};
         return value;
     }
 }
@@ -204,7 +216,7 @@ int search(Board& board, int depth, int alpha, int beta) {
 Move findBestMove(Board& board, int maxDepth) {
     Move best{};
     int bestScore = board.sideToMove() == WHITE ? -1000000 : 1000000;
-
+    TransTable.clear();
     for (int depth = 1; depth <= maxDepth; ++depth) {
         std::vector<Move> moves = board.generateLegalMoves();
         orderMoves(moves, board);

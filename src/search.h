@@ -3,8 +3,17 @@
 
 #include "board.h"
 #include <vector>
+#include <unordered_map>
+#include <string>
 
 namespace nova {
+
+struct TTEntry {
+    int depth;
+    int score;
+};
+
+extern std::unordered_map<std::string, TTEntry> TransTable;
 
 int evaluate(const Board& board);
 int search(Board& board, int depth, int alpha, int beta);
