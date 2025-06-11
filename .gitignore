@@ -1,6 +1,1 @@
 build/
-stockfish/
-STOCKFISH SRC/src/*.o
-STOCKFISH SRC/src/stockfish
-STOCKFISH SRC/src/*.nnue
-STOCKFISH SRC/src/.depend
