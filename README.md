@@ -1,6 +1,6 @@
 # Nova Chess Engine
 
-Nova is a simple chess engine implementing the UCI protocol. It currently supports legal move generation including castling and en passant. Evaluation and search are left for future work.
+Nova is a simple chess engine implementing the UCI protocol. It currently supports legal move generation including castling and en passant. Evaluation, search, MCTS and more currently are a work is a work in progress.
 
 ## Building
 
