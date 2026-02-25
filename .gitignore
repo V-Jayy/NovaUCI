@@ -1,0 +1,20 @@
+# Build artifacts
+nova.exe
+build/
+*.o
+*.obj
+*.exe
+*.pdb
+
+# Dependencies / Other engines
+Stockfish-master/
+stockfish/
+
+# Testing
+testing/
+
+# IDE files
+.vs/
+out/
+bin/
+obj/
