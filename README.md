@@ -32,8 +32,7 @@ Type `uci` to initialize the protocol, and `go depth 10` to start a search.
 
 ## Author ✍️
 
-- **JoshK**
-- **Antigravity**
+- **Jayy**
 
 ## License 📜
 
